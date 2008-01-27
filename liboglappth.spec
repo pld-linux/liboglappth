@@ -53,7 +53,9 @@ Statyczna biblioteka liboglappth.
 
 %build
 %configure
-%{__make}
+# pass LIBS to override "-L/usr/X11R6/lib" (unwanted especially on archs using lib64)
+%{__make} \
+	LIBS="-lglut -lGLU -lGL -lm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
