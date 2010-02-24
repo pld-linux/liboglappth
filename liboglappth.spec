@@ -2,14 +2,14 @@ Summary:	Library for portable OpenGL applications
 Summary(pl.UTF-8):	Biblioteka dla przenośnych aplikacji OpenGL
 Name:		liboglappth
 Version:	0.98
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://bioinformatics.org/ghemical/download/current/%{name}-%{version}.tar.gz
 # Source0-md5:	dd280286a51fcba6a47264a383a2f1fe
 URL:		http://bioinformatics.org/ghemical/ghemical/index.html
 BuildRequires:	Mesa-libGLU-devel
-BuildRequires:	glut-devel
+BuildRequires:	freeglut-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
