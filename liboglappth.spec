@@ -3,13 +3,12 @@ Summary(pl.UTF-8):	Biblioteka dla przenośnych aplikacji OpenGL
 Name:		liboglappth
 Version:	0.98
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		Libraries
 Source0:	http://bioinformatics.org/ghemical/download/current/%{name}-%{version}.tar.gz
 # Source0-md5:	dd280286a51fcba6a47264a383a2f1fe
 URL:		http://bioinformatics.org/ghemical/ghemical/index.html
-BuildRequires:	Mesa-libGLU-devel
-BuildRequires:	freeglut-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +26,6 @@ Summary(pl.UTF-8):	Pliki nagłówkowe bibliotekliboglappth
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-GLU-devel
-Requires:	OpenGL-glut-devel
 Requires:	libstdc++-devel
 
 %description devel
@@ -55,7 +53,7 @@ Statyczna biblioteka liboglappth.
 %configure
 # pass LIBS to override "-L/usr/X11R6/lib" (unwanted especially on archs using lib64)
 %{__make} \
-	LIBS="-lglut -lGLU -lGL -lm"
+	LIBS="-lGLU -lGL -lm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
